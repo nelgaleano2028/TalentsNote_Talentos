@@ -1,0 +1,79 @@
+body{
+	background-color:#F3F3F3;
+
+}
+
+
+label{
+	float:left;
+	clear:both;
+	margin:3px 5px 5px 118px;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	color:#0F91EF;
+}
+
+.input{
+	float:left;
+	clear:both;
+	margin:5px 5px 5px 50px;
+	width:200px;
+	height:25px;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:14px;
+	-webkit-border-radius: 4px;
+}
+
+.boton{
+	float:left;
+	clear:both;
+	margin:5px 5px 5px 90px;
+	border: 1px solid #D7D7D7;
+	background-color:#4C84B2;
+	color:#EEE;
+	width:120px;
+	height:30px;
+	cursor:pointer;
+	-webkit-border-radius: 4px;
+	 -moz-border-radius:5px;
+	border-radius:5px;
+	behavior:url(./scripts/PIE.htc);
+}
+
+#form-login{
+	
+	margin:0 auto 0 auto;
+	width:400px;
+}
+
+#formulario{
+	float:left;
+	background-color:#FFF;
+	border:1px solid #D7D7D7;
+	border:1px solid #D7D7D7;
+	width:300px;
+	height:230px;
+	margin-top:20px;
+	margin-left:40px;
+	-webkit-border-radius: 8px;
+	-webkit-box-shadow: 2px 2px 5px #AAA;
+	 -moz-border-radius:5px;
+	border-radius:5px;
+	behavior:url(./scripts/PIE.htc);
+}
+
+#logo-login{
+	float:left;
+	margin-left:60px;
+}
+
+.recuperar-form {
+    clear: both;
+    margin-left: 5px;
+}
+
+a#recordar-pass {
+	
+	float: right; color:#0F91EF; font-size: 14px; text-decoration: none; margin-right: 10px; margin-top: 10px;
+	
+}
+

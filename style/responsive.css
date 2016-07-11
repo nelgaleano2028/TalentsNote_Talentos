@@ -1,0 +1,120 @@
+/* CSS Document */
+@media 
+only screen and (max-width: 960px),
+(min-device-width: 800px) and (max-device-width: 1024px)  {
+	
+	body{
+		width: 1024px;
+	}
+	
+	#header{
+	width:1024px;
+	background:url(../images/header.png) repeat-x;
+	
+	}
+	
+	#menu_arriba{
+	width:960px;
+    }
+	
+	#tool-tip{
+	position:absolute;
+    width:120px;
+	left:830px;
+   }
+   
+   /*Envuelve todos los contenidos*/
+   
+   #content-main{
+	float:left;
+	background:#FFF;
+	border:1px solid #D7D7D7;
+	-webkit-border-radius:8px;
+    -moz-border-radius:8px;
+	border-radius:8px;
+	behavior:url(./scripts/PIE.htc); /*bordes redeondeados en Internet explorer 6,7,8*/  
+	margin-left:10px;
+	width:736px;
+	}
+	
+	#content-main2{
+	float:left;
+	background:#FFF;
+	border:1px solid #D7D7D7;
+	-webkit-border-radius:8px;
+    -moz-border-radius:8px;
+	border-radius:8px;
+	behavior:url(./scripts/PIE.htc); /*bordes redeondeados en Internet explorer 6,7,8*/  
+	margin-left:10px;
+	width:736px;
+	height:500px;
+    }
+	
+	#content-main3{
+	float:left;
+	background:#FFF;
+	border:1px solid #D7D7D7;
+	-webkit-border-radius:8px;
+    -moz-border-radius:8px;
+	border-radius:8px;
+	behavior:url(./scripts/PIE.htc); /*bordes redeondeados en Internet explorer 6,7,8*/  
+	margin-left:10px;
+	width:736px;
+    }
+	
+	#content-main4{
+	float:left;
+	background:#FFF;
+	border:1px solid #D7D7D7;
+	-webkit-border-radius:8px;
+    -moz-border-radius:8px;
+	border-radius:8px;
+	behavior:url(./scripts/PIE.htc); /*bordes redeondeados en Internet explorer 6,7,8*/  
+	width:750px;
+    }
+	
+	/*Formularios*/
+	
+	.fondo-form{
+	float:left;
+	width:713px;
+	background:#F1F1F1;
+	border:2px solid #D7D7D7;
+	-webkit-border-radius:5px;
+    -moz-border-radius:5px;
+	border-radius:5px;
+	behavior:url(./scripts/PIE.htc);
+	margin:5px 10px 0px 10px;
+   }
+   
+   .form-center{
+	margin-left:100px;
+	width:300px;
+	margin-top:20px;
+	margin-bottom:20px;
+    }
+	
+	.form-boton{
+	margin-left:200px;
+	margin-bottom:30px;
+    }
+	
+	.label-c{
+	margin-left:300px;
+    }
+	
+	/*tablas*/
+	.table_incidente{
+	width:715px;
+	margin:10px 10px 10px 10px;
+    }
+	
+	#tabla_ingeniero{
+	width:500px;
+	margin-bottom: 20px;
+	}
+   
+
+   
+}
+

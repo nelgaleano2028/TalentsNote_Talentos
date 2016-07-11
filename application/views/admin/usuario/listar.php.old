@@ -1,0 +1,92 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
+<?php
+        $this->output->set_header( "Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0" ); 
+        $this->output->set_header( "Pragma: no-cache" ); 
+?>
+<!--content-main-->
+<div id="content-main">      
+       <div class="title-cliente">
+        <div class="admin">
+            	 <span class="user-admin">Usuarios:</span>
+                 
+            	
+            </div>
+         </div>
+        <div class="content-on-blank-table">
+        	<!--table-->
+        	<div class="table_incidente">
+            
+            <?php $message = $this->session->flashdata( 'message' ); ?>
+      
+             <?php if( !empty( $message ) ): ?>
+                   
+              <!-- Notification messages -->
+               <div class="nNote">
+                   <?php if( $message['type'] == 'failure' ): ?>
+                   <div class="nFailure">
+                       <p><strong>ERROR: </strong><?php echo $message['text'] ?></p>
+                   </div>
+                   <?php endif; ?>
+               	  
+                   <?php if( $message['type'] == 'success' ): ?>
+                   <div class="nSuccess">
+                       <p><strong>CORRECTO: </strong><?php echo $message['text'] ?></p>
+                   </div>
+                   <?php endif; ?>
+                  
+               </div>
+              
+              <?php endif; ?>
+            
+            <table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
+                <thead>
+                    <tr>
+                        <th>Codigo</th>
+                        <th>Usuario</th>
+                        <th>Contacto</th> <!--Ojo preguntar si tiene id_contaco o si tiene id_ingeniero-->
+                        <th>Perfil</th>
+                        <th>Estado</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+                        
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                   
+                   <?php if( !empty( $data ) ):  foreach( $data as $value  ):?>
+                    
+                    <tr >
+                        <td><?php echo $value['id_usuario'] ?></td>
+                        <td><?php echo $value['Usuario'] ?></td>
+                        <td><?php echo $value['contacto'] ?></td>
+                        <td><?php 
+							if( $value['id_perfil'] == 1 ) echo 'Administrador'; 
+							if( $value['id_perfil'] == 2 ) echo 'Ingeniero'; 
+							if( $value['id_perfil'] == 3 ) echo 'Cliente'; 
+						
+						?></td>
+                        <td><?php 
+							if( $value['estado'] == 1 ) echo 'Activo'; 
+							if( $value['estado'] != 1 ) echo 'Inactivo';  
+						
+						?></td>
+                        <td class="center"><a href="<?php echo base_url() ?>usario/editar/<?php echo $value['id_usuario']?>" title="Editar elemento" >
+                        <img src="<?php echo base_url()?>images/editar.png" width="20" height="20" title="Editar elemento" alt="editar"/></a>
+                        </td>
+                        <td class="center"><a href="<?php echo base_url() ?>usuario/eliminar/<?php echo $value['id_usuario']?>" onclick="javascript: if( !confirm( 'Quiere eliminar este elemento ?' ) ) return false;">
+                        <img src="<?php echo base_url()?>images/eliminar.png" width="20" height="20" title="Eliminar elemento" alt="editar"/>	</a>
+                        </td>
+                        
+                    </tr>
+                    
+                     <?php endforeach; endif; ?> 
+                   
+                </tbody>
+			</table>
+            </div>
+        	<!--Fin table-->
+            
+         
+        </div>    
+</div>
