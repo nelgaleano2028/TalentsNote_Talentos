@@ -159,8 +159,8 @@ class Incidencia extends CI_Model {
 			foreach($query->result() as $row){
 				
 				 $this->load->library('My_PHPMailer');
-				$mail = new PHPMailer();
-				$mail->Host = "vladimir.bello@talentsw.com";
+				$mail = new mailer();
+				//$mail->Host = "vladimir.bello@talentsw.com";
 				// $mail->From = "vladimir.bello@talentsw.com"; 
 				$mail->FromName = "Administrador Talentos y Tecnologia";
 				$mail->Subject = $row->asunto;
@@ -322,7 +322,13 @@ class Incidencia extends CI_Model {
 				$mail->Body = $body;
 				$mail->AltBody = "Talents notes";
 				$mail->AddAttachment("./incidentes/".$row->imagen, $row->imagen );
-				$mail->send();	 		
+				$exito = $mail->Send();
+				
+				if($exito){
+					echo '<script>alert("Se envio el correo"); </script>';
+				}else{
+					echo '<script>alert("No se envio un carajo ..|.."); </script>';
+				}
 									
 			}
 			
@@ -364,8 +370,8 @@ class Incidencia extends CI_Model {
 			foreach($query->result() as $row){
 				
 				 $this->load->library('My_PHPMailer');
-						 $mail = new PHPMailer();
-						$mail->Host = "vladimir.bello@talentsw.com";
+						 $mail = new mailer();
+						//$mail->Host = "vladimir.bello@talentsw.com";
 						 $mail->FromName = "Administrador Talentos y Tecnologia";
 						 $mail->Subject = $row->asunto;
 						 $mail->AddAddress($row->correo,'ingeniero');
@@ -515,7 +521,12 @@ class Incidencia extends CI_Model {
 						 $mail->Body = $body;
 						 $mail->AltBody = "Talents notes";
 						 $mail->AddAttachment("./incidentes/".$row->imagen, $row->imagen );
-						 $mail->send();	 		
+						 $exito = $mail->Send();
+						if($exito){
+							echo '<script>alert("Se envio el correo"); </script>';
+						}else{
+							echo '<script>alert("No se envio un carajo ..|.."); </script>';
+						}	
 									
 			}
 			

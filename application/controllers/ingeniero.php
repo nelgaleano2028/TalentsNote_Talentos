@@ -689,8 +689,8 @@ class Ingeniero extends CI_Controller{
 		
 		$enviar=$this->incidencia->correo( $incidencia );
 		 $this->load->library('My_PHPMailer');
-		 $mail = new PHPMailer();
-		 $mail->Host = "vladimir.bello@talentsw.com";
+		 $mail = new mailer();
+		 //$mail->Host = "vladimir.bello@talentsw.com";
 		 // $mail->Host = "ssl://smtp.googlemail.com";
 		 // $mail->Port = 465; /*Puerto del servidor de correo*/
 	  	//  $mail->Mailer = "smtp";  // Alternative to IsSMTP()
@@ -700,6 +700,7 @@ class Ingeniero extends CI_Controller{
 		 // $mail->WordWrap = 72;
    		// $mail->SMTPSecure = "ssl";
 		 $mail->FromName = 'Administrador talentos y tecnologia';
+		 // $mail->IsHTML(true); // El correo se envía como HTML
 		 $mail->Subject = $enviar[0]['asunto'];
 		 $mail->AddAddress($enviar[0]['correo_contacto'],'cliente');
 		 $mail->AddAddress($enviar[0]['correo_ingeniero'],'ingeniero');
@@ -855,13 +856,18 @@ class Ingeniero extends CI_Controller{
 				</tbody></table>';
 		 $mail->IsHTML(true); // El correo se envía como HTML
 		 $mail->Body = $body;
-		 if(!$mail->Send()) 
-        {	
-            return false;
-        } else {
-        	
-            return true;
-        }
+		 $exito = $mail->Send();
+		if($exito){
+			echo '<script>alert("Se envio el correo"); </script>';
+		}else{
+			echo '<script>alert("No se envio un carajo ..|.."); </script>';
+		}
+			// echo '<script>alert("TRUE"); </script>';
+            // return true;
+        // }else{
+			// echo '<script>alert("FALSE"); </script>';	
+            // return false;
+        // }
 		
 	}
 	

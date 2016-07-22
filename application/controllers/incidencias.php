@@ -225,8 +225,8 @@ class Incidencias extends CI_Controller{
 		$enviar=$this->incidencia->correo($incidencia);
 
 		 $this->load->library('My_PHPMailer');
-		 $mail = new PHPMailer();
-		 $mail->Host = "vladimir.bello@talentsw.com";
+		 $mail = new mailer();
+		 //$mail->Host = "vladimir.bello@talentsw.com";
 		 // $mail->From = "vladimir.bello@talentsw.com"; 
 		 $mail->FromName = "Administrador AFQsas";
 		 $mail->Subject = $enviar[0]['asunto'];
@@ -393,7 +393,12 @@ class Incidencias extends CI_Controller{
 		 $mail->Body = $body;
 		 $mail->AltBody = "Talents notes";
 		 
-		 $mail->send();
+		 $exito = $mail->Send();
+		if($exito){
+			echo '<script>alert("Se envio el correo"); </script>';
+		}else{
+			echo '<script>alert("No se envio un carajo ..|.."); </script>';
+		}
 		 	 
 		return true;
 		
